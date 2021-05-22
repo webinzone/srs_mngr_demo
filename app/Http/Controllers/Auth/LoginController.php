@@ -71,17 +71,7 @@ class LoginController extends Controller
     {
         $this->loginViaRemoteUser($request);
         $this->loginViaSaml($request);
-        if (Auth::check()) {
-            return redirect()->intended('/');
-        }
-
-        if ($this->saml->isEnabled() && Setting::getSettings()->saml_forcelogin == "1" && !($request->has('nosaml') || $request->session()->has('error'))) {
-            return redirect()->route('saml.login');
-        }
-
-        if (Setting::getSettings()->login_common_disabled == "1") {
-            return view('errors.403');
-        }
+        
 
         return view('auth.login');
     }
