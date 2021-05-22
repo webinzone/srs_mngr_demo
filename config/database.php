@@ -35,7 +35,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'postgresql'),
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -100,8 +100,8 @@ return [
             ]) : []
         ],
 
-        'postgresql' => [
-            'driver'   => 'postgresql',
+        'pgsql' => [
+            'driver'   => 'pgsql',
             'host'     => env('DB_HOST', 'ec2-18-215-111-67.compute-1.amazonaws.com'),
             'database' => env('DB_DATABASE', 'dcidntpgo74rh0'),
             'username' => env('DB_USERNAME', 'kksdxlzhfipght'),
