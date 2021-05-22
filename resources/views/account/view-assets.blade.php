@@ -16,7 +16,7 @@ View Assets for  {{ $user->present()->fullName() }}
         @if ($user->id)
           <div class="box-header with-border">
             <div class="box-heading">
-              <h2 class="box-title"> {{ trans('admin/users/general.assets_user', array('name' => $user->first_name)) }}</h2>
+              <h2 class="box-title"> </h2>
             </div>
           </div><!-- /.box-header -->
         @endif

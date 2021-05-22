@@ -45,19 +45,7 @@
                'class' => 'form-inline',
                 'id' => 'bulkForm']) }}
 
-            @if (request('status')!='deleted')
-              @can('delete', \App\Models\User::class)
-                <div id="toolbar">
-                    <label for="bulk_actions" class="sr-only">Bulk Actions</label>
-                  <select name="bulk_actions" class="form-control select2" style="width: 200px;" aria-label="bulk_actions">
-                    <option value="delete">Bulk Checkin &amp; Delete</option>
-                    <option value="edit">Bulk Edit</option>
-                  </select>
-                  <button class="btn btn-default" id="bulkEdit" disabled>Go</button>
-                </div>
-              @endcan
-            @endif
-
+            
 
             <table
                     data-click-to-select="true"

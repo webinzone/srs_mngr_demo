@@ -36,23 +36,33 @@ class CustomFieldSeeder extends Seeder
       DB::table('custom_field_custom_fieldset')->insert([
             [
                 'custom_field_id' => '1',
-                'custom_fieldset_id' => '1'
+                'custom_fieldset_id' => '1',
+                'order' => '2',
+                'required' => true
             ],
             [
                 'custom_field_id' => '2',
-                'custom_fieldset_id' => '1'
+                'custom_fieldset_id' => '1',
+                'order' => '2',
+                'required' => true
             ],
             [
               'custom_field_id' => '3',
-              'custom_fieldset_id' => '2'
+              'custom_fieldset_id' => '2',
+                'order' => '1',
+                'required' => true
             ],
             [
               'custom_field_id' => '4',
-              'custom_fieldset_id' => '2'
+              'custom_fieldset_id' => '2',
+                'order' => '1',
+                'required' => true
             ],
             [
               'custom_field_id' => '5',
-              'custom_fieldset_id' => '2'
+              'custom_fieldset_id' => '2',
+                'order' => '1',
+                'required' => true
             ],
 
       ]);

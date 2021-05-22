@@ -3,9 +3,7 @@
 <html>
     <head>
       <title>
-        @section('title')
-         Snipe-IT Setup
-        @show
+       SRS MANAGER
       </title>
         <link rel="stylesheet" href="{{ url(mix('css/dist/all.css')) }}">
 

@@ -4109,6 +4109,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-static-top {
   z-index: 1000;
   border-width: 0 0 1px;
+  background-color: #3c8dbc;
 }
 @media (min-width: 768px) {
   .navbar-static-top {

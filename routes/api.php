@@ -161,8 +161,188 @@ Route::group(['prefix' => 'v1','namespace' => 'Api', 'middleware' => 'auth:api']
             'except' => ['create', 'edit'],
             'parameters' => ['component' => 'component_id']
         ]
-    ); // Companies resource
+    ); 
+        Route::resource('rent_details', 'RentDetailsController',
+        [
+            'names' =>
+                [
+                    'index' => 'api.rent_details.index'
+                    
+                ],
+            'except' => ['create', 'edit'],
+            'parameters' => ['rent_details' => 'rent_details_id']
+        ]
+    ); 
+       Route::resource('complaints', 'ComplaintsController',
+        [
+            'names' =>
+                [
+                    'index' => 'api.complaints.index'
+                    
+                ],
+            'except' => ['create', 'edit'],
+            'parameters' => ['complaints' => 'complaints_id']
+        ]
+    ); 
 
+   Route::resource('handovers', 'HandoversController',
+        [
+            'names' =>
+                [
+                    'index' => 'api.handovers.index'
+                    
+                ],
+            'except' => ['create', 'edit'],
+            'parameters' => ['handovers' => 'handovers_id']
+        ]
+    ); 
+
+   Route::resource('progresses', 'ProgressesController',
+        [
+            'names' =>
+                [
+                    'index' => 'api.progresses.index'
+                    
+                ],
+            'except' => ['create', 'edit'],
+            'parameters' => ['progresses' => 'progresses_id']
+        ]
+    ); 
+   Route::resource('incidents', 'IncidentsController',
+        [
+            'names' =>
+                [
+                    'index' => 'api.incidents.index'
+                    
+                ],
+            'except' => ['create', 'edit'],
+            'parameters' => ['incidents' => 'incidents_id']
+        ]
+    ); 
+
+    Route::resource('activity_logs', 'ActivityLogsController',
+        [
+            'names' =>
+                [
+                    'index' => 'api.activity_logs.index'
+                    
+                ],
+            'except' => ['create', 'edit'],
+            'parameters' => ['activity_logs' => 'activity_logs_id']
+        ]
+    ); 
+
+     Route::resource('support_plans', 'SupportPlansController',
+        [
+            'names' =>
+                [
+                    'index' => 'api.support_plans.index'
+                    
+                ],
+            'except' => ['create', 'edit'],
+            'parameters' => ['support_plans' => 'support_plans_id']
+        ]
+    );
+     Route::resource('transfers', 'TransfersController',
+        [
+            'names' =>
+                [
+                    'index' => 'api.transfers.index'
+                    
+                ],
+            'except' => ['create', 'edit'],
+            'parameters' => ['transfers' => 'transfers_id']
+        ]
+    );
+     Route::resource('files', 'FilesController',
+        [
+            'names' =>
+                [
+                    'index' => 'api.files.index'
+                    
+                ],
+            'except' => ['create', 'edit'],
+            'parameters' => ['files' => 'files_id']
+        ]
+    );
+     Route::resource('bookings', 'BookingsController',
+        [
+            'names' =>
+                [
+                    'index' => 'api.bookings.index'
+                    
+                ],
+            'except' => ['create', 'edit'],
+            'parameters' => ['bookings' => 'bookings_id']
+        ]
+    );
+
+
+     Route::resource('resident_agreements', 'ResidentAgreementsController',
+        [
+            'names' =>
+                [
+                    'index' => 'api.resident_agreements.index'
+                    
+                ],
+            'except' => ['create', 'edit'],
+            'parameters' => ['resident_agreements' => 'resident_agreements_id']
+        ]
+    );
+
+     Route::resource('staff_roasters', 'StaffRoastersController',
+        [
+            'names' =>
+                [
+                    'index' => 'api.staff_roasters.index'
+                    
+                ],
+            'except' => ['create', 'edit'],
+            'parameters' => ['staff_roasters' => 'staff_roasters_id']
+        ]
+    );
+      Route::resource('condition_reports', 'ConditionReportsController',
+        [
+            'names' =>
+                [
+                    'index' => 'api.condition_reports.index'
+                    
+                ],
+            'except' => ['create', 'edit'],
+            'parameters' => ['condition_reports' => 'condition_reports_id']
+        ]
+    );
+      Route::resource('progress_notes', 'ProgressNotesController',
+        [
+            'names' =>
+                [
+                    'index' => 'api.progress_notes.index'
+                    
+                ],
+            'except' => ['create', 'edit'],
+            'parameters' => ['progress_notes' => 'progress_notes_id']
+        ]
+    );
+     Route::resource('transfer_records', 'TransferRecordsController',
+        [
+            'names' =>
+                [
+                    'index' => 'api.transfer_records.index'
+                    
+                ],
+            'except' => ['create', 'edit'],
+            'parameters' => ['transfer_records' => 'transfer_records_id']
+        ]
+    );
+    Route::resource('echart', 'EchartController',
+        [
+            'names' =>
+                [
+                    'index' => 'api.echart.index'                    
+                ],
+            'except' => ['create', 'edit']
+        ]
+    );
 
     /*--- Departments API ---*/
 
@@ -781,7 +961,7 @@ Route::group(['prefix' => 'v1','namespace' => 'Api', 'middleware' => 'auth:api']
             'except' => ['create', 'edit'],
             'parameters' => ['supplier' => 'supplier_id']
         ]
-    ); // Suppliers resource
+    ); 
 
 
 

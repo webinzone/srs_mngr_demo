@@ -1,14 +1,38 @@
 <?php
 
 
+
+
+
 Route::group(['middleware' => 'auth'], function () {
+    Route::resource('rent_details','RentDetailsController');    
+    Route::resource('complaints','ComplaintsController');   
+    Route::resource('handovers','HandoversController');    
+    Route::resource('progresses','ProgressesController');    
+    Route::resource('incidents','IncidentsController');    
+    Route::resource('activity_logs','ActivityLogsController');    
+    Route::resource('support_plans','SupportPlansController');
+    Route::resource('transfers','TransfersController');    
+    Route::resource('files','FilesController'); 
+    Route::resource('bookings','BookingsController');    
+    Route::resource('resident_agreements','ResidentAgreementsController');    
+    Route::resource('staff_roasters','StaffRoastersController');    
+    Route::resource('condition_reports','ConditionReportsController'); 
+    Route::resource('progress_notes','ProgressNotesController');    
+    Route::resource('transfer_records','TransferRecordsController');    
+    Route::get('search', 'IncidentsController@search')->name('search');
+
+
+
+
+
     /*
     * Companies
     */
     Route::resource('companies', 'CompaniesController', [
         'parameters' => ['company' => 'company_id']
     ]);
-
+    
     /*
     * Categories
     */
@@ -246,9 +270,9 @@ Route::group([ 'prefix' => 'account', 'middleware' => ['auth']], function () {
     Route::get('api', [ 'as' => 'user.api', 'uses' => 'ProfileController@api' ]);
 
     # View Assets
-    Route::get('view-assets', [ 'as' => 'view-assets', 'uses' => 'ViewAssetsController@getIndex' ]);
+    Route::get('view-assets', [ 'as' => 'view-assets', 'uses' => 'ProfileController@getIndex' ]);
 
-    Route::get('requested', [ 'as' => 'account.requested', 'uses' => 'ViewAssetsController@getRequestedAssets' ]);
+    Route::get('requested', [ 'as' => 'account.requested', 'uses' => 'ProfileController@getMenuState' ]);
 
     # Accept Asset
     Route::get(
@@ -272,7 +296,7 @@ Route::group([ 'prefix' => 'account', 'middleware' => ['auth']], function () {
     );
 
     # Account Dashboard
-    Route::get('/', [ 'as' => 'account', 'uses' => 'ViewAssetsController@getIndex' ]);
+    Route::get('/', [ 'as' => 'account', 'uses' => 'ProfileController@api' ]);
 
 
     Route::get('accept', 'Account\AcceptanceController@index')
@@ -469,6 +493,8 @@ Route::group(['middleware' => 'web'], function () {
             'as' => 'logout',
             'uses' => 'Auth\LoginController@logout' ]
     );
+
+   
 
 });
 

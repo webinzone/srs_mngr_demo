@@ -2,6 +2,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\AdminController;
+use App\Models\ActivityLog;
+use App\Models\Booking;
+
 use Auth;
 use View;
 
@@ -23,23 +26,22 @@ class DashboardController extends Controller
     */
     public function getIndex()
     {
-        // Show the page
         if (Auth::user()->hasAccess('admin')) {
-
+            
             $asset_stats=null;
 
-            $counts['asset'] = \App\Models\Asset::count();
-            $counts['accessory'] = \App\Models\Accessory::count();
-            $counts['license'] = \App\Models\License::assetcount();
-            $counts['consumable'] = \App\Models\Consumable::count();
-            $counts['grand_total'] =  $counts['asset'] +  $counts['accessory'] +  $counts['license'] +  $counts['consumable'];
+            $bookings = Booking::all();
 
+            $counts['complaint'] = \App\Models\Complaint::count();
+            $counts['rent_details'] = \App\Models\RentDetail::count();
+            $counts['bookings'] = \App\Models\Booking::count();
+            $counts['staff_roaster'] = \App\Models\StaffRoaster::count();
+            
             if ((!file_exists(storage_path().'/oauth-private.key')) || (!file_exists(storage_path().'/oauth-public.key'))) {
                 \Artisan::call('migrate', ['--force' => true]);
                 \Artisan::call('passport:install');
             }
-
-            return view('dashboard')->with('asset_stats', $asset_stats)->with('counts', $counts);
+            return view('dashboard')->with('asset_stats', $asset_stats)->with('counts', $counts)->with('bookings', $bookings);
         } else {
         // Redirect to the profile page
             return redirect()->intended('account/view-assets');

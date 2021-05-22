@@ -332,15 +332,7 @@
                 </div>
 
 
-                <!-- Manager -->
-              @include ('partials.forms.edit.user-select', ['translated_name' => trans('admin/users/table.manager'), 'fieldname' => 'manager_id'])
-
-                  <!--  Department -->
-              @include ('partials.forms.edit.department-select', ['translated_name' => trans('general.department'), 'fieldname' => 'department_id'])
-
-
-                  <!-- Location -->
-              @include ('partials.forms.edit.location-select', ['translated_name' => trans('general.location'), 'fieldname' => 'location_id'])
+               
 
                 <!-- Phone -->
                 <div class="form-group {{ $errors->has('phone') ? 'has-error' : '' }}">
@@ -457,47 +449,7 @@
                   </div>
                 </div>
 
-                  <!-- Groups -->
-                  <div class="form-group{{ $errors->has('groups') ? ' has-error' : '' }}">
-                      <label class="col-md-3 control-label" for="groups[]"> {{ trans('general.groups') }}</label>
-                      <div class="col-md-6">
-
-                          @if ((Config::get('app.lock_passwords') || (!Auth::user()->isSuperUser())))
-
-                              @if (count($userGroups->keys()) > 0)
-                                  <ul>
-                                      @foreach ($groups as $id => $group)
-                                          {!! ($userGroups->keys()->contains($id) ? '<li>'.e($group).'</li>' : '') !!}
-                                      @endforeach
-                                  </ul>
-                              @endif
-
-                              <span class="help-block">Only superadmins may edit group memberships.</p>
-                                  @else
-                                      <div class="controls">
-                        <select
-                                name="groups[]"
-                                aria-label="groups[]"
-                                id="groups[]"
-                                multiple="multiple"
-                                class="form-control">
-
-                            @foreach ($groups as $id => $group)
-                                <option value="{{ $id }}"
-                                        {{ ($userGroups->keys()->contains($id) ? ' selected="selected"' : '') }}>
-                                    {{ $group }}
-                                </option>
-                            @endforeach
-                        </select>
-
-                        <span class="help-block">
-                          {{ trans('admin/users/table.groupnotes') }}
-                        </span>
-                    </div>
-                          @endif
-
-                      </div>
-                  </div>
+                 
 
 
               </div> <!--/col-md-12-->

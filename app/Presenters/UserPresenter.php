@@ -162,52 +162,7 @@ class UserPresenter extends Presenter
                 "title" => trans('admin/users/table.location'),
                 "visible" => true,
                 "formatter" => "locationsLinkObjFormatter"
-            ],
-            [
-                "field" => "manager",
-                "searchable" => true,
-                "sortable" => true,
-                "title" => trans('admin/users/table.manager'),
-                "visible" => true,
-                "formatter" => "usersLinkObjFormatter"
-            ],
-            [
-                'field' => 'assets_count',
-                'searchable' => false,
-                'sortable' => true,
-                'switchable' => true,
-                'escape' => true,
-                'class' => 'css-barcode',
-                'title' => 'Assets',
-                'visible' => true,
-            ],
-            [
-                "field" => "licenses_count",
-                "searchable" => false,
-                "sortable" => true,
-                "switchable" => true,
-                'class' => 'css-license',
-                "title" => 'License',
-                "visible" => true,
-            ],
-            [
-                "field" => "consumables_count",
-                "searchable" => false,
-                "sortable" => true,
-                "switchable" => true,
-                'class' => 'css-consumable',
-                "title" => 'Consumables',
-                "visible" => true,
-            ],
-            [
-                "field" => "accessories_count",
-                "searchable" => false,
-                "sortable" => true,
-                "switchable" => true,
-                'class' => 'css-accessory',
-                "title" => 'Accessories',
-                "visible" => true,
-            ],
+            ],            
             [
                 "field" => "notes",
                 "searchable" => true,
@@ -216,15 +171,7 @@ class UserPresenter extends Presenter
                 "title" => trans('general.notes'),
                 "visible" => true,
             ],
-            [
-                "field" => "groups",
-                "searchable" => false,
-                "sortable" => false,
-                "switchable" => true,
-                "title" => trans('general.groups'),
-                "visible" => true,
-                'formatter' => 'groupsFormatter'
-            ],
+          
             [
                 "field" => "ldap_import",
                 "searchable" => false,
