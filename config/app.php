@@ -21,7 +21,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => env('SITE_NAME', 'SRS Manager'),
+    'name' => env('SITE_NAME', 'Snipe-IT'),
 
     /*
     |--------------------------------------------------------------------------
