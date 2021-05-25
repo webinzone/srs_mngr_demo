@@ -1,10 +1,10 @@
 <VirtualHost *:80>
-    <Directory {{ app_path }}/public>
+    <Directory /var/www/html/snipeit/public>
         Allow From All
         AllowOverride All
         Options -Indexes
     </Directory>
 
-    DocumentRoot {{ app_path }}/public
+    DocumentRoot /var/www/html/snipeit/public
     ServerName {{ fqdn }}
 </VirtualHost>
