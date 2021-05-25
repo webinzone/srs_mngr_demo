@@ -147,7 +147,7 @@ create_virtualhost () {
     echo "      Options -Indexes"
     echo "  </Directory>"
     echo ""
-    echo "  DocumentRoot /var/www/html/snipeit/public"
+    echo "  DocumentRoot /var/www/html/public"
     echo "  ServerName $fqdn"
     echo "</VirtualHost>"
   } >> "$apachefile"
