@@ -141,13 +141,13 @@ install_packages () {
 create_virtualhost () {
   {
     echo "<VirtualHost *:80>"
-    echo "  <Directory $APP_PATH/public>"
+    echo "  <Directory /var/www/html/snipe-it/public>"
     echo "      Allow From All"
     echo "      AllowOverride All"
     echo "      Options -Indexes"
     echo "  </Directory>"
     echo ""
-    echo "  DocumentRoot /var/www/html/public"
+    echo "  DocumentRoot /var/www/html/snipe-it/public"
     echo "  ServerName $fqdn"
     echo "</VirtualHost>"
   } >> "$apachefile"
