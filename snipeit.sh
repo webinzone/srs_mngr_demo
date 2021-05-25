@@ -67,7 +67,7 @@ clear
 
 readonly APP_USER="snipeitapp"
 readonly APP_NAME="snipeit"
-readonly APP_PATH="/var/www/html/$APP_NAME"
+readonly APP_PATH="/var/www/html/snipe-it/public"
 
 progress () {
   spin[0]="-"
