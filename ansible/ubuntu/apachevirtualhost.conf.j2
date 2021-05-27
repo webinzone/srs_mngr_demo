@@ -1,10 +1,11 @@
 <VirtualHost *:80>
     <Directory /var/www/html/snipeit/public>
         Allow From All
+        Require all granted
         AllowOverride All
         Options -Indexes
     </Directory>
 
     DocumentRoot /var/www/html/snipeit/public
-    ServerName {{ fqdn }}
+    ServerName https://srs-manager-demo-app.herokuapp.com/
 </VirtualHost>
