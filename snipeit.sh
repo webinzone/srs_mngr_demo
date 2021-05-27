@@ -123,14 +123,14 @@ install_packages () {
 create_virtualhost () {
   {
     echo "<VirtualHost *:80>"
-    echo "  <Directory /var/www/html/snipeit/public>"
+    echo "  <Directory /var/www/html/https://srs-manager-demo-app.herokuapp.com/public>"
     echo "      Allow From All"
     echo "      Require all granted"
     echo "      AllowOverride All"
     echo "      Options -Indexes"
     echo "  </Directory>"
     echo ""
-    echo "  DocumentRoot /var/www/html/snipeit/public"
+    echo "  DocumentRoot /var/www/html/https://srs-manager-demo-app.herokuapp.com/public"
     echo "  ServerName https://srs-manager-demo-app.herokuapp.com/"
     echo "</VirtualHost>"
   } >> "$apachefile"
