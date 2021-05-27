@@ -1,22 +1,4 @@
-#!/bin/bash
-#/ Usage: snipeit.sh [-vh]
-#/
-#/ Install Snipe-IT open source asset management.
-#/
-#/ OPTIONS:
-#/   -v | --verbose    Enable verbose output.
-#/   -h | --help       Show this message.
 
-######################################################
-#           Snipe-It Install Script                  #
-#          Script created by Mike Tucker             #
-#            mtucker6784@gmail.com                   #
-#                                                    #
-# Feel free to modify, but please give               #
-# credit where it's due. Thanks!                     #
-######################################################
-
-# Parse arguments
 while true; do
   case "$1" in
     -h|--help)
@@ -67,7 +49,7 @@ clear
 
 readonly APP_USER="snipeitapp"
 readonly APP_NAME="snipeit"
-readonly APP_PATH="/var/www/html/snipe-it/public"
+readonly APP_PATH="/var/www/html/snipeit/public"
 
 progress () {
   spin[0]="-"
@@ -141,14 +123,15 @@ install_packages () {
 create_virtualhost () {
   {
     echo "<VirtualHost *:80>"
-    echo "  <Directory /var/www/html/snipe-it/public>"
+    echo "  <Directory /var/www/html/snipeit/public>"
     echo "      Allow From All"
+    echo "      Require all granted"
     echo "      AllowOverride All"
     echo "      Options -Indexes"
     echo "  </Directory>"
     echo ""
-    echo "  DocumentRoot /var/www/html/snipe-it/public"
-    echo "  ServerName $fqdn"
+    echo "  DocumentRoot /var/www/html/snipeit/public"
+    echo "  ServerName https://srs-manager-demo-app.herokuapp.com/"
     echo "</VirtualHost>"
   } >> "$apachefile"
 }
@@ -817,7 +800,7 @@ esac
 done
 
 echo ""
-echo "  ***Open http://$fqdn to login to Snipe-IT.***"
+echo "  ***Open https://srs-manager-demo-app.herokuapp.com/ to login to Snipe-IT.***"
 echo ""
 echo ""
 echo "* Cleaning up..."
