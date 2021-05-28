@@ -60,7 +60,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
     'warn_debug' => env('WARN_DEBUG', true),
 
     /*
@@ -126,7 +126,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    'key' => env('APP_KEY','SomeRandomStringSomeRandomString'),
 
     'cipher' =>  env('APP_CIPHER', 'AES-256-CBC'),
 
